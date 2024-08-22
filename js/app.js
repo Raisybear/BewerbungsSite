@@ -29,7 +29,7 @@ function showSection(sectionId) {
 
   // Ändere die Hintergrundfarbe der gradient-box basierend auf der aktiven Sektion
   const gradientBox = document.querySelector('.gradient-box');
-  gradientBox.classList.remove('home', 'projekte', 'about', 'lebenslauf', 'tools'); // Entferne alle spezifischen Klassen
+  gradientBox.classList.remove('home', 'projekte', 'about', 'lebenslauf', 'tools', 'bewerbungsdossier'); // Entferne alle spezifischen Klassen
   if (sectionId === 'home') {
     gradientBox.classList.add('home');
   } else if (sectionId === 'projekte') {
@@ -40,5 +40,33 @@ function showSection(sectionId) {
     gradientBox.classList.add('lebenslauf');
   }else if (sectionId === 'tools') {
     gradientBox.classList.add('tools');
+  }else if (sectionId === 'bewerbungsdossier') {
+  gradientBox.classList.add('bewerbungsdossier');
   }
 }
+
+
+
+// Modal-Elemente abrufen
+var modal = document.getElementById("pdfModal");
+var btn = document.getElementById("pdfBtn");
+var span = document.getElementsByClassName("close")[0];
+
+// Modal öffnen
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// Modal schließen
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// Modal schließen, wenn der Benutzer außerhalb des Modals klickt
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+
